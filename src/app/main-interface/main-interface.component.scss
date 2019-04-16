@@ -1,0 +1,30 @@
+$object: 'main-interface';
+
+.#{$object} {
+  margin-top: 2rem;
+
+  &__container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    .#{$object} {
+      
+      &__left-panel, &__right-panel {
+        width: 100%;
+      }
+    }
+  }
+
+  // Medium-Small
+  @media (min-width: 481px) { }
+  
+  // Medium
+  @media (min-width: 768px) { }
+  
+  // Medium-Large
+  @media (min-width: 1200px) {  }
+  
+  // Large View
+  @media (min-width: 1400px) {  }
+}
