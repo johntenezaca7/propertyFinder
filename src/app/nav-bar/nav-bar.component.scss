@@ -1,0 +1,46 @@
+$object: 'nav-bar';
+
+.#{$object} {
+
+  &__main-wrapper {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    list-style-type: none;
+    background-color: #77dd77;
+    border: none;
+    height: 75px;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    .#{$object} {
+
+      &__nav-item {
+        display: block;
+        text-align: center;
+        padding: 14px 30px;
+
+        a {
+          color:#0a240a;
+          font-size: 20px;
+          text-decoration: none;
+        }
+      }
+
+    }
+  }
+
+  // Medium-Small
+  @media (min-width: 481px) { }
+  
+  // Medium
+  @media (min-width: 768px) { }
+  
+  // Medium-Large
+  @media (min-width: 1200px) {  }
+  
+  // Large View
+  @media (min-width: 1400px) {  }
+}
