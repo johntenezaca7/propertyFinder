@@ -9,6 +9,9 @@ import { LeftPanelComponent } from './left-panel/left-panel.component';
 import { MapViewComponent } from './map-view/map-view.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { PropertyCardComponent } from './property-card/property-card.component';
+import { HttpClientModule } from '@angular/common/http';
+import { PropertyDataService } from './property-data.service';
+
 import Config from '../../config.js';
 
 @NgModule({
@@ -23,11 +26,12 @@ import Config from '../../config.js';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     AgmCoreModule.forRoot({
       apiKey: Config.apiKey
     })
   ],
-  providers: [],
+  providers: [ PropertyDataService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
