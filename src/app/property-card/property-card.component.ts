@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 import { PropertyDataService } from '../property-data.service';
 
 @Component({
@@ -11,7 +11,8 @@ export class PropertyCardComponent implements OnChanges {
 
   constructor( private propertyDataService: PropertyDataService ) { }
 
-  ngOnChanges() {
+  ngOnChanges(changes: SimpleChanges) {
+    // console.log('changes on active:', changes)
   }
 
   setActiveProperty(prop):void {

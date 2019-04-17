@@ -1,11 +1,13 @@
 <div class="property-card" *ngIf="propCard">
   
-  <div class="property-card__card-wrapper" (click)="setActiveProperty(propCard)">
-    <img [src]="propCard.attributes['thumbnail-url']"  />
-    <div class="property-card__card-details">
-      <h4>John Doe</h4> 
-      <p>Architect & Engineer</p> 
+  <!-- <div [ngClass]="active ? 'property-card__active' : '' "> -->
+    <div [ngClass]=" active ? 'property-card__card-wrapper property-card__card-wrapper--active' : 'property-card__card-wrapper' "  (click)="setActiveProperty(propCard)">
+      <img [src]="propCard.attributes['thumbnail-url']"  />
+      <div class="property-card__card-details">
+        <h4>John Doe</h4> 
+        <p>Architect & Engineer</p> 
+      </div>
     </div>
-  </div>
+  <!-- </div> -->
 
 </div>

@@ -15,7 +15,11 @@ export class MapViewComponent implements OnInit, OnChanges {
   activeProperty: Object;
 
   ngOnInit() {
-    this.activeProperty = this.propertyDataService.getActiveProp();
+    this.propertyDataService.getActiveProp()
+      .subscribe( data => {
+        console.log('getting data:', data)
+        this.activeProperty = data;
+      })
   }
 
   ngOnChanges(changes: SimpleChanges) {

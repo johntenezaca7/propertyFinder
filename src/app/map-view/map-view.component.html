@@ -1,4 +1,4 @@
-<ng-container *ngIf="activeProperty.active; else generalView" >
+<ng-container *ngIf="activeProperty; else generalView" >
 
   <agm-map [zoom]="18" [latitude]="activeProperty.property.attributes.lat" [longitude]="activeProperty.property.attributes.lng" >
 
