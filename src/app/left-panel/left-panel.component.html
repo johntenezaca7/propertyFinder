@@ -1,6 +1,10 @@
 <header>
   <app-nav-bar></app-nav-bar>
 </header>
-<section>
-  Grid for property card
+<section class="left-panel__property-card-container">
+
+  <ng-container *ngFor="let card of displayList">
+    <app-property-card [propCard]="card"></app-property-card>
+  </ng-container>
+
 </section>

@@ -1,5 +1,24 @@
-<agm-map [latitude]="59.326242" [longitude]="17.8419719" >
-  <agm-marker [latitude]="59.326242" [longitude]="17.8419719">
-    <agm-info-window>Börk</agm-info-window>
-  </agm-marker>
-</agm-map>
+<ng-container *ngIf="activeProperty.active; else generalView" >
+
+  <agm-map [zoom]="18" [latitude]="activeProperty.property.attributes.lat" [longitude]="activeProperty.property.attributes.lng" >
+
+    <agm-marker [latitude]="activeProperty.property.attributes.lat" [longitude]="activeProperty.property.attributes.lng">
+      <agm-info-window>Börk</agm-info-window>
+    </agm-marker>
+      
+  </agm-map>
+
+</ng-container>
+<ng-template #generalView>
+
+  <agm-map [zoom]="12" [latitude]="33.753746" [longitude]="-84.386330" >
+
+    <ng-container *ngFor="let marker of markers ">
+      <agm-marker [latitude]="marker.attributes.lat" [longitude]="marker.attributes.lng">
+        <agm-info-window>Börk</agm-info-window>
+      </agm-marker>
+    </ng-container>
+      
+  </agm-map>
+
+</ng-template>

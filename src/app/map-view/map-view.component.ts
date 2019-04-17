@@ -1,4 +1,5 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges, OnInit } from '@angular/core';
+import { PropertyDataService } from '../property-data.service';
 
 @Component({
   selector: 'app-map-view',
@@ -6,15 +7,19 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./map-view.component.scss']
 })
 
-export class MapViewComponent implements OnInit {
-  @Input() markers = [];
+export class MapViewComponent implements OnInit, OnChanges {
+  @Input() markers: any[];
 
-  constructor() { }
+  constructor( private propertyDataService: PropertyDataService ) { }
+
+  activeProperty: Object;
 
   ngOnInit() {
-    if ( this.markers ){
-      console.log('data passed:', this.markers)
-    }
+    this.activeProperty = this.propertyDataService.getActiveProp();
+  }
+
+  ngOnChanges(changes: SimpleChanges) {
+
   }
 
 }

@@ -1,0 +1,38 @@
+$object: 'property-card';
+
+.#{$object} {
+
+  &__card-wrapper {
+    cursor: pointer;
+    margin-bottom: 2rem;
+    max-width: 250px;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+
+    img {
+      width: 100%;
+    }
+
+    .#{$object} {
+      &__card-details {
+        padding: 15px 0 5px 10px;
+
+        h4 {
+          margin: 0;
+        }
+      }
+    } 
+  }
+
+  // Medium-Small
+  @media (min-width: 481px) { }
+  
+  // Medium
+  @media (min-width: 768px) { }
+  
+  // Medium-Large
+  @media (min-width: 1200px) {  }
+  
+  // Large View
+  @media (min-width: 1400px) {  }
+}

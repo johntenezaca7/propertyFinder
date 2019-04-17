@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PropertyDataService } from '../property-data.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-main-interface',
@@ -10,12 +11,15 @@ export class MainInterfaceComponent implements OnInit {
 
   constructor(private propertyDataService: PropertyDataService ) { }
 
-  data: any;
+  data: any[];
 
   ngOnInit() {
+    this.getDataOnLoad();
+  }
+
+  getDataOnLoad(): Subscription {
     return this.propertyDataService.getDefault()
       .subscribe( stream => {
-        console.log(stream['data'])
         this.data = stream['data'];
       });
   }

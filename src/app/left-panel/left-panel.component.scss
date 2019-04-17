@@ -1,0 +1,26 @@
+$object: 'left-panel';
+
+.#{$object} {
+
+  &__property-card-container {
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    overflow: scroll;
+    max-height: 820px;
+  }
+
+  // Medium-Small
+  @media (min-width: 481px) { }
+  
+  // Medium
+  @media (min-width: 768px) { }
+  
+  // Medium-Large
+  @media (min-width: 1200px) {  }
+  
+  // Large View
+  @media (min-width: 1400px) {  }
+}
