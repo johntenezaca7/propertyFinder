@@ -3,11 +3,11 @@
   <section class="main-interface__container">
 
     <article class="main-interface__left-panel">
-      <app-left-panel [displayList]="data"></app-left-panel>
+      <app-left-panel [displayList]="data" [activeProperty]="activeProperty" (passResetObj)="goIt($event)" [newDisplay]="newDisplay"></app-left-panel>
     </article>
 
     <article class="main-interface__right-panel">
-      <app-map-view [markers]="data"></app-map-view>
+      <app-map-view [markers]="data" [activeProperty]="activeProperty"></app-map-view>
     </article>
     
   </section>

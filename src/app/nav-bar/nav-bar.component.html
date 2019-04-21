@@ -1,8 +1,31 @@
 <nav class="nav-bar">
   <ul class="nav-bar__main-wrapper">
-    <li class="nav-bar__nav-item"><a href="#home">Price</a></li>
-    <li class="nav-bar__nav-item"><a href="#news">Bed</a></li>
-    <li class="nav-bar__nav-item"><a href="#contact">Bath</a></li>
-    <li class="nav-bar__nav-item"><a href="#contact">Filter</a></li>
+    <li>
+      <div class="nav-bar__dropdown">
+        <button class="nav-bar__dropdown-btn">Sort By: {{ displaySortTxt }}</button>
+        <ul class="nav-bar__dropdown-content">
+          <li (click)="sortLowToHighPrice()">
+            <a href="#item1">Price Low to High</a>
+          </li>
+          <li (click)="sortHighToLowPrice()">
+            <a href="#item2">Price High to Low</a>
+          </li>
+          <li (click)="getByBedrooms(1)">
+            <a href="#item2">1 Bedroom</a>
+          </li>
+          <li (click)="getByBedrooms(2)">
+            <a href="#item2">2 Bedroom</a>
+          </li>
+          <li (click)="getByBedrooms(3)">
+            <a href="#item2">3 Bedroom</a>
+          </li>
+        </ul>
+      </div> 
+    </li>
+    <li (click)="reset($event)">
+      <div class="nav-bar__dropdown" >
+        <button class="nav-bar__dropdown-btn">Rest</button>
+      </div> 
+    </li>
   </ul>
 </nav>

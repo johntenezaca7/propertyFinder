@@ -1,9 +1,22 @@
-<ng-container *ngIf="activeProperty; else generalView" >
+<ng-container *ngIf="activeProperty && activeProperty.active; else generalView" >
 
-  <agm-map [zoom]="18" [latitude]="activeProperty.property.attributes.lat" [longitude]="activeProperty.property.attributes.lng" >
+  <agm-map [zoom]="18" [latitude]="activeProperty.property.lat" [longitude]="activeProperty.property.lng" >
 
-    <agm-marker [latitude]="activeProperty.property.attributes.lat" [longitude]="activeProperty.property.attributes.lng">
-      <agm-info-window>Börk</agm-info-window>
+    <agm-marker [latitude]="activeProperty.property.lat" [longitude]="activeProperty.property.lng">
+      <agm-info-window>
+        <div>
+          <dl>
+            <dt>Address: </dt>
+            <dd>{{ activeProperty.property['display-address'] }}</dd>
+            <dt>Status:</dt>
+            <dd>{{ activeProperty.property['listing-status'] }}</dd>
+            <dt>Listing Price:</dt>
+            <dd>{{ activeProperty.property['listing-price'] | currency }}</dd>
+            <dt>Area:</dt>
+            <dd>{{ activeProperty.property['square-feet'] | number }}(ft²)</dd>
+          </dl>
+        </div>
+      </agm-info-window>
     </agm-marker>
       
   </agm-map>
@@ -14,8 +27,19 @@
   <agm-map [zoom]="12" [latitude]="33.753746" [longitude]="-84.386330" >
 
     <ng-container *ngFor="let marker of markers ">
-      <agm-marker [latitude]="marker.attributes.lat" [longitude]="marker.attributes.lng">
-        <agm-info-window>Börk</agm-info-window>
+      <agm-marker [latitude]="marker.lat" [longitude]="marker.lng">
+        <agm-info-window>
+          <dl>
+            <dt>Address: </dt>
+            <dd>{{ marker['display-address'] }}</dd>
+            <dt>Status:</dt>
+            <dd>{{ marker['listing-status'] }}</dd>
+            <dt>Listing Price:</dt>
+            <dd>{{ marker['listing-price'] | currency }}</dd>
+            <dt>Area:</dt>
+            <dd>{{ marker['square-feet'] | number }}(ft²)</dd>
+          </dl>
+        </agm-info-window>
       </agm-marker>
     </ng-container>
       

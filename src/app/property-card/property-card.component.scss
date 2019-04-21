@@ -15,16 +15,23 @@ $object: 'property-card';
 
     .#{$object} {
       &__card-details {
-        padding: 15px 0 5px 10px;
+        padding: 0 0 5px 10px;
+        line-height: 1.6;
 
-        h4 {
+        dt {
+          margin: 0;
+          font-size: 12px;
+          font-weight: bolder;
+        }
+
+        dd {
           margin: 0;
         }
       }
     } 
 
-    &--active {
-      border: 2px solid green;
+    &:hover {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.781);
     }
   }
 

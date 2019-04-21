@@ -1,27 +1,24 @@
-import { Component, OnChanges, Input, SimpleChanges, OnInit } from '@angular/core';
+import { Component, OnChanges, Input, SimpleChanges, Output, EventEmitter } from '@angular/core';
 import { PropertyDataService } from '../property-data.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-left-panel',
   templateUrl: './left-panel.component.html',
   styleUrls: ['./left-panel.component.scss']
 })
-export class LeftPanelComponent implements OnInit, OnChanges {
-  @Input() displayList: any[];
-  // @Input() 
+export class LeftPanelComponent implements OnChanges {
+  @Input() displayList: any;
+  @Input() activeProperty: Object;
+  @Input() newDisplay: Object;
 
-  constructor( private propertyDataService: PropertyDataService ) { }
+  @Output() passResetObj = new EventEmitter;
 
-  ngOnInit() {
-    // console.log('parent before', this.activeProp)
-    
-    // console.log('parent after', this.activeProp)
+  constructor( private _propertyDataService: PropertyDataService) {}
+
+  ngOnChanges( changes: SimpleChanges ) {}
+
+  passUp(ev) {
+    this.passResetObj.emit(ev)
   }
-
-  ngOnChanges( changes: SimpleChanges) {
-    // console.log('parent before', this.activeProp)
-    // this.activeProp = this.propertyDataService.getActiveProp()
-    // console.log('parent after', this.activeProp)
-  }
-
 }

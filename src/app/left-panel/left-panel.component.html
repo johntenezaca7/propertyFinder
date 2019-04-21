@@ -1,10 +1,18 @@
 <header>
-  <app-nav-bar></app-nav-bar>
+  <app-nav-bar [checkRest]="newDisplay" (outputValue)="passUp($event)"></app-nav-bar>
 </header>
 <section class="left-panel__property-card-container">
-
-  <ng-container *ngFor="let card of displayList">
-    <app-property-card [propCard]="card" ></app-property-card>
+  
+  <ng-container *ngIf="newDisplay && newDisplay.show; else defaultList">
+    <ng-container *ngFor="let card of newDisplay.list">
+      <app-property-card [propCard]="card" ></app-property-card>
+    </ng-container>
   </ng-container>
 
+  <ng-template #defaultList>
+    <ng-container *ngFor="let card of displayList">
+      <app-property-card [propCard]="card" ></app-property-card>
+    </ng-container>
+  </ng-template>
+  
 </section>

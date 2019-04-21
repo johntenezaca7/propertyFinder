@@ -2,31 +2,79 @@ $object: 'nav-bar';
 
 .#{$object} {
 
+  ul,li {
+    list-style-type: none;
+  }
+
   &__main-wrapper {
+    background-color: rgb(90, 90, 90);
     margin: 0;
     padding: 0;
-    overflow: hidden;
-    list-style-type: none;
-    background-color: #008C72;
-    border: none;
-    height: 75px;
 
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
 
     .#{$object} {
 
-      &__nav-item {
-        display: block;
-        text-align: center;
-        padding: 14px 30px;
+      &__dropdown {
+        .#{$object} {
 
-        a {
-          color: white;
-          font-size: 20px;
-          text-decoration: none;
+          &__dropdown-btn {
+            cursor: pointer;
+            font-size: 16px;  
+            border: none;
+            outline: none;
+            color: white;
+            padding: 14px 16px;
+            background-color: inherit;
+            font-family: inherit;
+            margin: 0;
+
+            &:hover {
+              background-color: rgb(134, 134, 134);
+            }
+          }
+
+          &__dropdown-content {
+            margin: 0;
+            padding:0;
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+
+            
+            a {
+              margin: 0;
+              padding:0;
+              float: none;
+              color: black;
+              padding: 12px 16px;
+              text-decoration: none;
+              display: block;
+              text-align: left;
+
+              &:hover {
+                background-color: rgb(219, 219, 219);
+              }
+            }
+            
+          }
+
         }
+
+        &:hover{
+          .#{$object} {
+            &__dropdown-content {
+              display: block;
+            }
+          }
+        }
+
       }
 
     }

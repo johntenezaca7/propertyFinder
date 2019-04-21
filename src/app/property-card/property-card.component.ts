@@ -7,15 +7,13 @@ import { PropertyDataService } from '../property-data.service';
   styleUrls: ['./property-card.component.scss']
 })
 export class PropertyCardComponent implements OnChanges {
-  @Input() propCard: {};
+  @Input() propCard = {};
 
   constructor( private propertyDataService: PropertyDataService ) { }
 
-  ngOnChanges(changes: SimpleChanges) {
-    // console.log('changes on active:', changes)
-  }
+  ngOnChanges(changes: SimpleChanges) {}
 
   setActiveProperty(prop):void {
-    this.propertyDataService.selectProp(prop);
+    this.propertyDataService.setActiveProp(prop, true);
   }
 }

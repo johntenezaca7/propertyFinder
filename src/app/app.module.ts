@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AgmCoreModule } from '@agm/core';
+import { AgmCoreModule, GoogleMapsAPIWrapper } from '@agm/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -31,7 +31,7 @@ import Config from '../../config.js';
       apiKey: Config.apiKey
     })
   ],
-  providers: [ PropertyDataService ],
+  providers: [ PropertyDataService, GoogleMapsAPIWrapper ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

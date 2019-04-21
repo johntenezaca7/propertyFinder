@@ -1,3 +1,18 @@
 agm-map {
   height: 950px;
 }
+
+.agm-info-window-content {
+  padding: 0 0 5px 10px;
+  line-height: 1.6;
+
+  dt {
+    margin: 0;
+    font-size: 12px;
+    font-weight: bolder;
+  }
+
+  dd {
+    margin: 0;
+  }
+}
